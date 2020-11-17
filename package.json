@@ -1,0 +1,39 @@
+{
+  "name": "karabiner-bluetooth-keyboard-location-updater",
+  "version": "1.0.0",
+  "description": "Daemon that updates the Karabiner json watching the location of the Bluetooth keyboard",
+  "main": "index.js",
+  "scripts": {
+    "run": "node -r ts-node/register src/index.ts /Users/andrewjanian/.config/karabiner/karabiner.json",
+    "debug": "node --inspect -r ts-node/register src/index.ts",
+    "clean": "rm -rf ./build",
+    "build": "npm run-script clean && tsc -p . && chmod +x ./build/index.js",
+    "install-local": "npm run-script build && sudo npm install -g"
+  },
+  "bin": {
+    "karabiner-keyboard-location-updater": "./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajanian/KarabinerBluetoothKeyboardLocationUpdater.git"
+  },
+  "keywords": [],
+  "author": "Andrew Janian <andrew@janian.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajanian/KarabinerBluetoothKeyboardLocationUpdater/issues"
+  },
+  "homepage": "https://github.com/ajanian/KarabinerBluetoothKeyboardLocationUpdater#readme",
+  "dependencies": {
+    "execa": "^4.1.0",
+    "log4js": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "@typescript-eslint/eslint-plugin": "^4.8.0",
+    "@typescript-eslint/parser": "^4.8.0",
+    "eslint": "^7.13.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
+}
