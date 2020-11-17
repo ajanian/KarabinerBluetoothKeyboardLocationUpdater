@@ -1,6 +1,13 @@
 # KarabinerBluetoothKeyboardLocationUpdater
 Set of scripts to be used in a daemon or cronjob that updates the Karabiner json watching the location of the Bluetooth keyboard
 
+# Building
+To build you will need to npm build.  That requires having a node environment.
+```
+cd ajanian/KarabinerBluetoothKeyboardLocationUpdater
+npm run build
+```
+
 # Usage
 To use this script you must supply one and only one argument which is the path to the config json file for Karabiner.  The file will be updated in place to the location id of the bluetooth device.  This VERY LIKELY needs to be updated to match your system.  I have no idea how your keyboard(s) will show up in ioreg.  You should modify this script to remove the writeFileSync line so you don't overwrite your config while testing.
 
