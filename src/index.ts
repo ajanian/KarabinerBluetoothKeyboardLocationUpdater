@@ -58,7 +58,7 @@ function changeLocationIDs(rule: any, locationID: number): void {
             if (typeof rule[prop] === 'object') {
                 changeLocationIDs(rule[prop], locationID);
             }
-            else if (prop === 'locationID') {
+            else if (prop === 'location_id') {
                 rule[prop] = locationID;
             }
         }
